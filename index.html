@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puna de Atacama S.R.L. | Transporte Corporativo y Minero</title>
+    <title>ATACAMA | Transporte Corporativo y Minero de Excelencia</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,10 +22,10 @@
                     },
                     colors: {
                         puna: {
-                            dark: '#0f172a', // slate-900 (Asfalto)
-                            light: '#f8fafc', // slate-50 (Blanco limpio)
-                            accent: '#ea580c', // orange-600 (Terracota/Industrial)
-                            accentHover: '#c2410c', // orange-700
+                            dark: '#1a1a1a', // Asfalto/Noche más oscuro para que resalte el rojo
+                            light: '#f5f5f5', // Gris claro/Nube para la barra de navegación clara
+                            accent: '#E31D2A', // [BRANDING] Rojo Atacama (de image_1.png)
+                            accentHover: '#C21520', // Rojo Atacama oscuro
                         }
                     }
                 }
@@ -48,7 +48,7 @@
         
         /* Overlay oscuro para el Hero */
         .hero-bg {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1578310432368-80e22731c3c9?auto=format&fit=crop&q=80&w=2000');
+            background-image: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.95)), url('https://images.unsplash.com/photo-1578310432368-80e22731c3c9?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -57,41 +57,40 @@
 </head>
 <body class="font-sans bg-puna-light text-slate-800 antialiased selection:bg-puna-accent selection:text-white">
 
-    <nav class="fixed w-full z-50 bg-puna-dark/95 backdrop-blur-sm border-b border-slate-800 transition-all duration-300" id="navbar">
+    <nav class="fixed w-full z-50 bg-puna-light/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center gap-2">
-                    <i class="fa-solid fa-mountain-sun text-puna-accent text-2xl"></i>
-                    <span class="font-bold text-xl text-white tracking-tight">PUNA DE ATACAMA</span>
+            <div class="flex justify-between items-center h-24">
+                <div class="flex-shrink-0 flex items-center h-full">
+                    <img src="image_1.png" alt="ATACAMA Logo" class="h-16 w-auto" id="nav-logo">
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#inicio" class="text-gray-300 hover:text-white transition-colors text-sm font-semibold uppercase tracking-wider">Inicio</a>
-                    <a href="#nosotros" class="text-gray-300 hover:text-white transition-colors text-sm font-semibold uppercase tracking-wider">Nosotros</a>
-                    <a href="#servicios" class="text-gray-300 hover:text-white transition-colors text-sm font-semibold uppercase tracking-wider">Servicios</a>
-                    <a href="#contacto" class="text-gray-300 hover:text-white transition-colors text-sm font-semibold uppercase tracking-wider">Contacto</a>
+                <div class="hidden md:flex space-x-8 items-center h-full">
+                    <a href="#inicio" class="text-slate-800 hover:text-puna-accent transition-colors text-sm font-semibold uppercase tracking-wider h-full flex items-center border-b-2 border-transparent hover:border-puna-accent">Inicio</a>
+                    <a href="#nosotros" class="text-slate-800 hover:text-puna-accent transition-colors text-sm font-semibold uppercase tracking-wider h-full flex items-center border-b-2 border-transparent hover:border-puna-accent">Nosotros</a>
+                    <a href="#servicios" class="text-slate-800 hover:text-puna-accent transition-colors text-sm font-semibold uppercase tracking-wider h-full flex items-center border-b-2 border-transparent hover:border-puna-accent">Servicios</a>
+                    <a href="#contacto" class="text-slate-800 hover:text-puna-accent transition-colors text-sm font-semibold uppercase tracking-wider h-full flex items-center border-b-2 border-transparent hover:border-puna-accent">Contacto</a>
                 </div>
                 <div class="hidden md:block">
-                    <a href="#contacto" class="bg-puna-accent hover:bg-puna-accentHover text-white px-6 py-2 rounded-md font-semibold transition-all shadow-lg shadow-puna-accent/30">Cotizar</a>
+                    <a href="#contacto" class="bg-puna-accent hover:bg-puna-accentHover text-white px-8 py-3 rounded-full font-bold transition-all shadow-lg shadow-puna-accent/20 hover:scale-105">Cotizar Ahora</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section id="inicio" class="hero-bg min-h-screen flex items-center justify-center pt-20">
+    <section id="inicio" class="hero-bg min-h-screen flex items-center justify-center pt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-section">
-            <span class="text-puna-accent font-bold tracking-widest uppercase text-sm mb-4 block">Logística de Alta Exigencia</span>
+            <span class="text-puna-accent font-bold tracking-widest uppercase text-sm mb-4 block">Logística de Alta Exigencia para la Puna</span>
             <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
                 Transporte de Excelencia para la <br class="hidden md:block" />
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-puna-accent to-orange-400">Industria y Minería</span>
+                <span class="text-puna-accent">Industria y Minería</span>
             </h1>
             <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light">
                 Garantizamos los más altos estándares de seguridad, confort y puntualidad para empresas multinacionales operando en la Puna Argentina.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contacto" class="bg-puna-accent hover:bg-puna-accentHover text-white px-8 py-4 rounded-md font-bold text-lg transition-all shadow-lg shadow-puna-accent/40 hover:-translate-y-1">
-                    Solicitar Cotización
+                <a href="#contacto" class="bg-puna-accent hover:bg-puna-accentHover text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-xl shadow-puna-accent/30 hover:-translate-y-1">
+                    Solicitar Cotización <i class="fa-solid fa-calculator ml-2"></i>
                 </a>
-                <a href="#servicios" class="bg-transparent border border-gray-400 text-white hover:border-white hover:bg-white/10 px-8 py-4 rounded-md font-bold text-lg transition-all">
+                <a href="#servicios" class="bg-white/10 hover:bg-white/20 border border-white text-white px-10 py-4 rounded-full font-bold text-lg transition-all">
                     Nuestros Servicios
                 </a>
             </div>
@@ -104,7 +103,7 @@
                 <div>
                     <h2 class="text-3xl font-bold text-puna-dark mb-6">Trayectoria y Confiabilidad en el Terreno más Exigente</h2>
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        Con base en San Salvador de Jujuy, Puna de Atacama S.R.L. nace para dar respuesta a la creciente demanda logística de los proyectos mineros e industriales de la región. Entendemos que en la altura y bajo condiciones extremas, no hay margen para el error.
+                        Con base en San Salvador de Jujuy, ATACAMA S.R.L. nace para dar respuesta a la creciente demanda logística de los proyectos mineros e industriales de la región. Entendemos que en la altura y bajo condiciones extremas, no hay margen para el error.
                     </p>
                     <p class="text-gray-600 mb-8 leading-relaxed">
                         Nuestra flota está equipada con tecnología de rastreo satelital, jaulas antivuelco y certificaciones bajo normas internacionales, asegurando que su personal llegue a destino siempre a tiempo y seguro.
@@ -122,82 +121,82 @@
                     </ul>
                 </div>
                 <div class="relative">
-                    <div class="absolute inset-0 bg-puna-accent translate-x-4 translate-y-4 rounded-lg -z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1610055743415-38507851e3bd?auto=format&fit=crop&q=80&w=800" alt="Camioneta en la puna" class="rounded-lg shadow-2xl object-cover h-full w-full">
+                    <div class="absolute inset-0 bg-puna-accent translate-x-4 translate-y-4 rounded-2xl -z-10 shadow-xl shadow-puna-accent/20"></div>
+                    <img src="https://images.unsplash.com/photo-1610055743415-38507851e3bd?auto=format&fit=crop&q=80&w=800" alt="Camioneta en la puna" class="rounded-2xl shadow-2xl object-cover h-full w-full">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-puna-dark text-white border-y border-slate-800">
+    <section class="py-16 bg-puna-dark text-white border-y border-gray-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-in-section">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
                 <div class="p-6">
-                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 mx-auto bg-gray-700 rounded-full flex items-center justify-center mb-6">
                         <i class="fa-solid fa-shield-halved text-2xl text-puna-accent"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Seguridad Absoluta</h3>
-                    <p class="text-gray-400 text-sm">Protocolos rigurosos y vehículos homologados para operaciones en entornos de alto riesgo.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Protocolos rigurosos y vehículos homologados para operaciones en entornos de alto riesgo.</p>
                 </div>
                 <div class="p-6">
-                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 mx-auto bg-gray-700 rounded-full flex items-center justify-center mb-6">
                         <i class="fa-solid fa-clock text-2xl text-puna-accent"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Puntualidad Crítica</h3>
-                    <p class="text-gray-400 text-sm">Entendemos que en la industria el tiempo es vital. Optimizamos rutas y garantizamos horarios.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Entendemos que en la industria el tiempo es vital. Optimizamos rutas y garantizamos horarios.</p>
                 </div>
                 <div class="p-6">
-                    <div class="w-16 h-16 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 mx-auto bg-gray-700 rounded-full flex items-center justify-center mb-6">
                         <i class="fa-solid fa-truck-pickup text-2xl text-puna-accent"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Flota Moderna</h3>
-                    <p class="text-gray-400 text-sm">Unidades de última generación, preparadas específicamente para los caminos de la Puna.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Unidades de última generación, preparadas específicamente para los caminos de la Puna.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="servicios" class="py-24 bg-slate-100">
+    <section id="servicios" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 fade-in-section">
-                <h2 class="text-3xl md:text-4xl font-bold text-puna-dark mb-4">Soluciones de Transporte</h2>
-                <div class="w-24 h-1 bg-puna-accent mx-auto"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-puna-dark mb-4 tracking-tight">Nuestras Soluciones de Transporte</h2>
+                <div class="w-24 h-1 bg-puna-accent mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in-section">
-                <div class="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                    <div class="h-48 overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 fade-in-section">
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                    <div class="h-60 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=600" alt="Transporte Minero" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-puna-dark mb-3">Transporte Minero</h3>
-                        <p class="text-gray-600 mb-6 text-sm">Traslado de personal hacia los yacimientos bajo estrictas normas mineras. Vehículos equipados con tracción 4x4, jaulas ROPS e insumos de supervivencia.</p>
+                        <h3 class="text-2xl font-bold text-puna-dark mb-4">Transporte Minero</h3>
+                        <p class="text-gray-600 mb-6 text-base leading-relaxed">Traslado de personal hacia los yacimientos bajo estrictas normas mineras. Vehículos equipados con tracción 4x4, jaulas ROPS e insumos de supervivencia.</p>
                         <a href="#contacto" class="text-puna-accent font-semibold group-hover:text-puna-accentHover flex items-center">
                             Cotizar servicio <i class="fa-solid fa-arrow-right ml-2 text-sm transition-transform group-hover:translate-x-1"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                    <div class="h-48 overflow-hidden">
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                    <div class="h-60 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?auto=format&fit=crop&q=80&w=600" alt="Traslados Corporativos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-puna-dark mb-3">Traslados Corporativos</h3>
-                        <p class="text-gray-600 mb-6 text-sm">Servicio ejecutivo para gerencia, inspectores y visitas corporativas. Minibuses y SUVs que garantizan confort total desde el aeropuerto hasta la planta.</p>
+                        <h3 class="text-2xl font-bold text-puna-dark mb-4">Traslados Corporativos</h3>
+                        <p class="text-gray-600 mb-6 text-base leading-relaxed">Servicio ejecutivo para gerencia, inspectores y visitas corporativas. Minibuses y SUVs que garantizan confort total desde el aeropuerto hasta la planta.</p>
                         <a href="#contacto" class="text-puna-accent font-semibold group-hover:text-puna-accentHover flex items-center">
                             Cotizar servicio <i class="fa-solid fa-arrow-right ml-2 text-sm transition-transform group-hover:translate-x-1"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                    <div class="h-48 overflow-hidden">
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                    <div class="h-60 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600" alt="Alquiler de Flota" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-puna-dark mb-3">Alquiler de Flota</h3>
-                        <p class="text-gray-600 mb-6 text-sm">Renting corporativo de camionetas pick-up preparadas para minería. Planes flexibles a corto y largo plazo con mantenimiento integral incluido.</p>
+                        <h3 class="text-2xl font-bold text-puna-dark mb-4">Alquiler de Flota</h3>
+                        <p class="text-gray-600 mb-6 text-base leading-relaxed">Renting corporativo de camionetas pick-up preparadas para minería. Planes flexibles a corto y largo plazo con mantenimiento integral incluido.</p>
                         <a href="#contacto" class="text-puna-accent font-semibold group-hover:text-puna-accentHover flex items-center">
                             Ver disponibilidad <i class="fa-solid fa-arrow-right ml-2 text-sm transition-transform group-hover:translate-x-1"></i>
                         </a>
@@ -212,33 +211,33 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 
                 <div>
-                    <h2 class="text-3xl font-bold text-puna-dark mb-6">Póngase en contacto</h2>
-                    <p class="text-gray-600 mb-10">Complete el formulario y nuestro equipo comercial se comunicará para diseñar una propuesta a la medida de los requerimientos de su proyecto.</p>
+                    <h2 class="text-3xl font-bold text-puna-dark mb-6 tracking-tight">Contáctenos</h2>
+                    <p class="text-gray-600 mb-10 leading-relaxed max-w-lg">Complete el formulario y nuestro equipo comercial se comunicará para diseñar una propuesta a la medida de los requerimientos de su proyecto.</p>
                     
                     <div class="space-y-6">
                         <div class="flex items-start">
-                            <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-puna-accent flex-shrink-0">
+                            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-puna-accent flex-shrink-0">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
-                            <div class="ml-4">
+                            <div class="ml-4 pt-1">
                                 <h4 class="text-lg font-bold text-puna-dark">Base Operativa</h4>
                                 <p class="text-gray-600">San Salvador de Jujuy, Jujuy, Argentina</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-puna-accent flex-shrink-0">
+                            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-puna-accent flex-shrink-0">
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
-                            <div class="ml-4">
+                            <div class="ml-4 pt-1">
                                 <h4 class="text-lg font-bold text-puna-dark">Email</h4>
                                 <a href="mailto:punadeatacama@gmail.com" class="text-gray-600 hover:text-puna-accent transition-colors">punadeatacama@gmail.com</a>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center text-puna-accent flex-shrink-0">
+                            <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-puna-accent flex-shrink-0">
                                 <i class="fa-solid fa-phone"></i>
                             </div>
-                            <div class="ml-4">
+                            <div class="ml-4 pt-1">
                                 <h4 class="text-lg font-bold text-puna-dark">Teléfono / WhatsApp</h4>
                                 <a href="tel:+54388155718528" class="text-gray-600 hover:text-puna-accent transition-colors">+54 388 155 718 528</a>
                             </div>
@@ -246,33 +245,33 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-[0_0_40px_rgba(0,0,0,0.05)] border border-gray-100">
-                    <form id="leadForm" class="space-y-6">
+                <div class="bg-white p-8 rounded-2xl shadow-[0_0_60px_rgba(0,0,0,0.05)] border border-gray-100">
+                    <form class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre Completo</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-puna-accent focus:border-transparent transition-all bg-gray-50 focus:bg-white text-slate-800">
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-puna-accent focus:border-transparent transition-all bg-gray-50 focus:bg-white text-slate-800">
                             </div>
                             <div>
                                 <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Empresa</label>
-                                <input type="text" id="company" name="company" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-puna-accent focus:border-transparent transition-all bg-gray-50 focus:bg-white text-slate-800">
+                                <input type="text" id="company" name="company" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-puna-accent focus:border-transparent transition-all bg-gray-50 focus:bg-white text-slate-800">
                             </div>
                         </div>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Corporativo</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-puna-accent focus:border-transparent transition-all bg-gray-50 focus:bg-white text-slate-800">
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-puna-accent focus:border-transparent transition-all bg-gray-50 focus:bg-white text-slate-800">
                             </div>
                             <div>
                                 <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
-                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-puna-accent focus:border-transparent transition-all bg-gray-50 focus:bg-white text-slate-800">
+                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-puna-accent focus:border-transparent transition-all bg-gray-50 focus:bg-white text-slate-800">
                             </div>
                         </div>
 
                         <div>
                             <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Servicio de Interés</label>
-                            <select id="service" name="service" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-puna-accent focus:border-transparent transition-all bg-gray-50 focus:bg-white text-slate-800">
+                            <select id="service" name="service" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-puna-accent focus:border-transparent transition-all bg-gray-50 focus:bg-white text-slate-800 cursor-pointer">
                                 <option value="minero">Transporte Minero</option>
                                 <option value="corporativo">Traslados Corporativos</option>
                                 <option value="flota">Alquiler de Flota</option>
@@ -282,66 +281,65 @@
 
                         <div>
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje / Requerimientos</label>
-                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-puna-accent focus:border-transparent transition-all bg-gray-50 focus:bg-white text-slate-800"></textarea>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-puna-accent focus:border-transparent transition-all bg-gray-50 focus:bg-white text-slate-800"></textarea>
                         </div>
 
-                        <button type="submit" id="submitBtn" class="w-full bg-puna-dark hover:bg-slate-800 text-white font-bold py-4 px-8 rounded-md transition-all flex justify-center items-center gap-2 shadow-lg">
+                        <button type="submit" class="w-full bg-puna-accent hover:bg-puna-accentHover text-white font-bold py-4 px-8 rounded-full transition-all flex justify-center items-center gap-2 shadow-lg shadow-puna-accent/30 hover:-translate-y-1">
                             <span>Enviar Solicitud</span>
                             <i class="fa-solid fa-paper-plane text-sm"></i>
                         </button>
-                        
-                        <div id="formStatus" class="hidden text-center text-sm font-medium mt-4 p-3 rounded-md"></div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-puna-dark pt-16 pb-8 border-t border-slate-800">
+    <footer class="bg-puna-dark pt-16 pb-8 border-t border-gray-700 text-gray-400">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                 <div>
-                    <div class="flex items-center gap-2 mb-6">
-                        <i class="fa-solid fa-mountain-sun text-puna-accent text-2xl"></i>
-                        <span class="font-bold text-xl text-white tracking-tight">PUNA DE ATACAMA</span>
+                    <div class="flex items-center mb-6">
+                        <img src="image_1.png" alt="ATACAMA Logo" class="h-14 w-auto">
                     </div>
-                    <p class="text-gray-400 text-sm max-w-xs">
-                        Transporte corporativo y minero de excelencia. Conectamos proyectos, garantizamos resultados.
+                    <p class="text-gray-400 text-sm max-w-sm leading-relaxed">
+                        Transporte corporativo y minero de excelencia. Conectamos proyectos, garantizamos resultados con seguridad absoluta.
                     </p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Enlaces Rápidos</h4>
                     <ul class="space-y-3">
-                        <li><a href="#inicio" class="text-gray-400 hover:text-puna-accent transition-colors text-sm">Inicio</a></li>
-                        <li><a href="#nosotros" class="text-gray-400 hover:text-puna-accent transition-colors text-sm">Sobre Nosotros</a></li>
-                        <li><a href="#servicios" class="text-gray-400 hover:text-puna-accent transition-colors text-sm">Servicios</a></li>
+                        <li><a href="#inicio" class="hover:text-puna-accent transition-colors text-sm">Inicio</a></li>
+                        <li><a href="#nosotros" class="hover:text-puna-accent transition-colors text-sm">Sobre Nosotros</a></li>
+                        <li><a href="#servicios" class="hover:text-puna-accent transition-colors text-sm">Servicios</a></li>
+                        <li><a href="#contacto" class="hover:text-puna-accent transition-colors text-sm">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase text-sm tracking-wider">Legal</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Términos y Condiciones</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Política de Privacidad</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors text-sm">Términos y Condiciones</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors text-sm">Política de Privacidad</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-gray-500 text-sm">
-                    &copy; <span id="year"></span> Puna de Atacama S.R.L. Todos los derechos reservados.
+                    &copy; <span id="year"></span> ATACAMA S.R.L. Todos los derechos reservados.
                 </p>
-                <div class="flex space-x-4">
+                <div class="flex space-x-5">
                     <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
                     <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // 1. Configurar el año dinámico en el footer
+        // Configurar el año dinámico en el footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // 2. Animaciones de scroll (Intersection Observer)
+        // Animaciones de scroll (Intersection Observer)
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -352,96 +350,18 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
+                    // Una vez visible, dejar de observar
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in-section').forEach((section) => {
+        // Seleccionar todas las secciones que deben animarse
+        const animatedSections = document.querySelectorAll('.fade-in-section');
+        
+        // Empezar a observar
+        animatedSections.forEach((section) => {
             observer.observe(section);
-        });
-
-        /* ======================================================================
-        3. INTEGRACIÓN CON SUPABASE & CLOUDFLARE
-        ======================================================================
-        Para conectar esto en tu entorno real:
-        
-        A. Instala el SDK: npm install @supabase/supabase-js
-        B. Importa y configura el cliente en tu archivo JS/TS principal.
-        C. Usa Variables de Entorno en Cloudflare Pages: 
-           VITE_SUPABASE_URL y VITE_SUPABASE_ANON_KEY
-        
-        EJEMPLO DE CÓDIGO REAL A IMPLEMENTAR (Comentado):
-        
-        import { createClient } from '@supabase/supabase-js'
-        
-        const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-        const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-        const supabase = createClient(supabaseUrl, supabaseKey);
-        ======================================================================
-        */
-
-        const form = document.getElementById('leadForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const statusDiv = document.getElementById('formStatus');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Estado de carga UI
-            const originalBtnText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Procesando...';
-            submitBtn.disabled = true;
-
-            // Recolectar datos
-            const formData = {
-                nombre: document.getElementById('name').value,
-                empresa: document.getElementById('company').value,
-                email: document.getElementById('email').value,
-                telefono: document.getElementById('phone').value,
-                servicio: document.getElementById('service').value,
-                mensaje: document.getElementById('message').value,
-                creado_en: new Date().toISOString()
-            };
-
-            try {
-                /*
-                --------------------------------------------------------------
-                LÓGICA REAL DE SUPABASE A DESCOMENTAR CUANDO ESTÉ CONFIGURADO
-                --------------------------------------------------------------
-                const { data, error } = await supabase
-                    .from('leads_comerciales') // Nombre de tu tabla en Postgres
-                    .insert([formData]);
-
-                if (error) throw error;
-                --------------------------------------------------------------
-                */
-
-                // Simulación de delay de red para la maqueta
-                await new Promise(resolve => setTimeout(resolve, 1500));
-                
-                // Éxito UI
-                statusDiv.classList.remove('hidden', 'bg-red-50', 'text-red-600');
-                statusDiv.classList.add('bg-green-50', 'text-green-700');
-                statusDiv.textContent = '¡Solicitud enviada con éxito! Nos contactaremos a la brevedad.';
-                form.reset();
-
-            } catch (error) {
-                // Error UI
-                console.error('Error al guardar en Supabase:', error);
-                statusDiv.classList.remove('hidden', 'bg-green-50', 'text-green-700');
-                statusDiv.classList.add('bg-red-50', 'text-red-600');
-                statusDiv.textContent = 'Hubo un error al enviar la solicitud. Intente nuevamente.';
-            } finally {
-                // Restaurar botón
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-                
-                // Ocultar mensaje después de 5 segundos
-                setTimeout(() => {
-                    statusDiv.classList.add('hidden');
-                }, 5000);
-            }
         });
     </script>
 </body>
