@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puna de Atacama S.R.L. | Transporte de Excelencia para Minería e Industria</title>
+    <meta name="description" content="Transporte corporativo y minero en San Salvador de Jujuy. Flota moderna, máxima seguridad y puntualidad para empresas multinacionales.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Outfit (display) y DM Sans (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --color-slate-deep: #0f1419;
+            --color-slate-dark: #1a1f2e;
+            --color-slate-medium: #2d3748;
+            --color-slate-light: #4a5568;
+            --color-copper: #d97706;
+            --color-copper-light: #f59e0b;
+            --color-terracota: #e67e22;
+            --color-white: #ffffff;
+            --color-gray-100: #f7fafc;
+            --color-gray-200: #edf2f7;
+            
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--color-slate-deep);
+            color: var(--color-gray-100);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--color-slate-dark);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-copper);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-copper-light);
+        }
+        
+        /* Grain Texture Overlay */
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            z-index: 9999;
+        }
+        
+        /* Hero Background */
+        .hero-bg {
+            background: linear-gradient(135deg, var(--color-slate-deep) 0%, var(--color-slate-dark) 50%, var(--color-slate-medium) 100%);
+            position: relative;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(217, 119, 6, 0.05) 50%, transparent 70%),
+                radial-gradient(circle at 20% 50%, rgba(230, 126, 34, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(to right, rgba(217, 119, 6, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(217, 119, 6, 0.03) 1px, transparent 1px);
+            background-size: 80px 80px;
+            pointer-events: none;
+        }
+        
+        /* Diagonal Accent Line */
+        .diagonal-accent {
+            position: absolute;
+            width: 200%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-copper), transparent);
+            transform: rotate(-15deg);
+            top: 30%;
+            left: -50%;
+            opacity: 0.3;
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            position: relative;
+            background: linear-gradient(135deg, var(--color-copper) 0%, var(--color-terracota) 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.875rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 40px rgba(217, 119, 6, 0.3);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(217, 119, 6, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-copper);
+            border: 2px solid var(--color-copper);
+            padding: 0.875rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--color-copper);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Service Cards */
+        .service-card {
+            background: linear-gradient(135deg, var(--color-slate-dark) 0%, var(--color-slate-medium) 100%);
+            border-radius: 8px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(217, 119, 6, 0.1);
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-copper), var(--color-terracota));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(217, 119, 6, 0.25);
+            border-color: var(--color-copper);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--color-copper) 0%, var(--color-terracota) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.3);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+        
+        /* Feature Items */
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: rgba(26, 31, 46, 0.6);
+            border-radius: 8px;
+            border-left: 4px solid var(--color-copper);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            background: rgba(26, 31, 46, 0.9);
+            transform: translateX(8px);
+            border-left-color: var(--color-terracota);
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--color-copper) 0%, var(--color-terracota) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        /* Form Inputs */
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: rgba(26, 31, 46, 0.8);
+            border: 2px solid rgba(217, 119, 6, 0.2);
+            border-radius: 6px;
+            color: var(--color-gray-100);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-copper);
+            background: rgba(26, 31, 46, 1);
+            box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+        }
+        
+        .form-input::placeholder {
+            color: var(--color-slate-light);
+        }
+        
+        textarea.form-input {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(15, 20, 25, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(217, 119, 6, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Stats Counter Animation */
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .stat-number {
+            animation: countUp 0.6s ease-out forwards;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Responsive Typography */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            .section-title {
+                font-size: 2rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold">
+                        <span style="font-family: var(--font-display); color: var(--color-copper);">PUNA</span>
+                        <span style="font-family: var(--font-display); color: white;"> de Atacama</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-300 hover:text-copper transition duration-300" style="color: var(--color-gray-200);">Inicio</a>
+                    <a href="#nosotros" class="text-gray-300 hover:text-copper transition duration-300" style="color: var(--color-gray-200);">Nosotros</a>
+                    <a href="#servicios" class="text-gray-300 hover:text-copper transition duration-300" style="color: var(--color-gray-200);">Servicios</a>
+                    <a href="#contacto" class="text-gray-300 hover:text-copper transition duration-300" style="color: var(--color-gray-200);">Contacto</a>
+                    <button onclick="scrollToContact()" class="btn-secondary">Solicitar Cotización</button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-slate-900 shadow-2xl md:hidden z-50" style="background: var(--color-slate-dark);">
+            <div class="p-6">
+                <button id="close-menu-btn" class="text-white mb-8 focus:outline-none">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+                <nav class="flex flex-col space-y-6">
+                    <a href="#inicio" class="text-gray-300 text-lg mobile-menu-link">Inicio</a>
+                    <a href="#nosotros" class="text-gray-300 text-lg mobile-menu-link">Nosotros</a>
+                    <a href="#servicios" class="text-gray-300 text-lg mobile-menu-link">Servicios</a>
+                    <a href="#contacto" class="text-gray-300 text-lg mobile-menu-link">Contacto</a>
+                    <button onclick="scrollToContact()" class="btn-primary mt-4">Solicitar Cotización</button>
+                </nav>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg min-h-screen flex items-center justify-center relative pt-20">
+        <div class="diagonal-accent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="text-center">
+                <h1 class="hero-title text-5xl md:text-7xl font-extrabold mb-6 leading-tight" style="font-family: var(--font-display);">
+                    <span class="block text-white">Transporte de</span>
+                    <span class="block" style="background: linear-gradient(135deg, var(--color-copper) 0%, var(--color-terracota) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Excelencia</span>
+                    <span class="block text-white">para la Industria</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed" style="color: var(--color-gray-200); font-family: var(--font-body); font-weight: 400;">
+                    Soluciones de transporte corporativo y minero en la Puna argentina. Seguridad, puntualidad y confort para empresas que exigen estándares internacionales.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <button onclick="scrollToContact()" class="btn-primary">
+                        Solicitar Cotización
+                    </button>
+                    <a href="#servicios" class="btn-secondary inline-block text-center">
+                        Ver Servicios
+                    </a>
+                </div>
+                
+                <!-- Stats Section -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 fade-in">
+                    <div class="stat-item">
+                        <div class="stat-number text-4xl md:text-5xl font-bold mb-2" style="color: var(--color-copper); font-family: var(--font-display);">15+</div>
+                        <div class="text-gray-400 text-sm uppercase tracking-wider">Años de Experiencia</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number text-4xl md:text-5xl font-bold mb-2" style="color: var(--color-copper); font-family: var(--font-display);">50+</div>
+                        <div class="text-gray-400 text-sm uppercase tracking-wider">Vehículos en Flota</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number text-4xl md:text-5xl font-bold mb-2" style="color: var(--color-copper); font-family: var(--font-display);">100%</div>
+                        <div class="text-gray-400 text-sm uppercase tracking-wider">Seguridad</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number text-4xl md:text-5xl font-bold mb-2" style="color: var(--color-copper); font-family: var(--font-display);">24/7</div>
+                        <div class="text-gray-400 text-sm uppercase tracking-wider">Disponibilidad</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="nosotros" class="py-24 relative" style="background: linear-gradient(180deg, var(--color-slate-deep) 0%, var(--color-slate-dark) 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="slide-in-left">
+                    <h2 class="section-title text-4xl md:text-5xl font-bold mb-6" style="font-family: var(--font-display); color: white;">
+                        Sobre
+                        <span style="color: var(--color-copper);">Nosotros</span>
+                    </h2>
+                    <div class="w-20 h-1 mb-8" style="background: linear-gradient(90deg, var(--color-copper), var(--color-terracota));"></div>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed" style="color: var(--color-gray-200);">
+                        Puna de Atacama S.R.L. es una empresa líder en transporte corporativo y minero con sede en San Salvador de Jujuy. Con más de 15 años de trayectoria, nos especializamos en brindar soluciones de movilidad seguras y confiables para empresas multinacionales que operan en las condiciones más exigentes de la Puna argentina.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-8 leading-relaxed" style="color: var(--color-gray-200);">
+                        Nuestra misión es garantizar la seguridad y el confort de cada pasajero, cumpliendo con los más altos estándares internacionales de calidad y puntualidad. Contamos con personal altamente capacitado y una flota moderna que se adapta a las necesidades específicas de cada cliente.
+                    </p>
+                    <button onclick="scrollToContact()" class="btn-primary">Conocer más</button>
+                </div>
+                
+                <div class="slide-in-right grid grid-cols-1 gap-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2" style="color: white; font-family: var(--font-display);">Certificaciones de Seguridad</h3>
+                            <p class="text-gray-400">Cumplimiento estricto de normativas nacionales e internacionales de seguridad vial y laboral.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-users text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2" style="color: white; font-family: var(--font-display);">Equipo Profesional</h3>
+                            <p class="text-gray-400">Conductores con licencia profesional, capacitación continua y experiencia en rutas de montaña.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2" style="color: white; font-family: var(--font-display);">Puntualidad Garantizada</h3>
+                            <p class="text-gray-400">Sistemas de monitoreo GPS y planificación logística que aseguran cumplimiento de horarios.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="servicios" class="py-24 relative" style="background: var(--color-slate-dark);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="section-title text-4xl md:text-5xl font-bold mb-6" style="font-family: var(--font-display); color: white;">
+                    Nuestros
+                    <span style="color: var(--color-copper);">Servicios</span>
+                </h2>
+                <div class="w-20 h-1 mx-auto mb-6" style="background: linear-gradient(90deg, var(--color-copper), var(--color-terracota));"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto" style="color: var(--color-gray-200);">
+                    Soluciones integrales de transporte diseñadas para las necesidades específicas de la industria minera y corporativa.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Service 1: Transporte Minero -->
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: white; font-family: var(--font-display);">Transporte Minero</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed" style="color: var(--color-gray-200);">
+                        Traslado de personal a yacimientos mineros en la Puna. Vehículos preparados para terrenos de alta montaña, con sistemas de seguridad reforzados y conductores especializados en rutas extremas.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-lg mt-1" style="color: var(--color-copper);"></i>
+                            <span class="text-gray-400">Transporte a yacimientos 24/7</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-lg mt-1" style="color: var(--color-copper);"></i>
+                            <span class="text-gray-400">Vehículos 4x4 de alta gama</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-lg mt-1" style="color: var(--color-copper);"></i>
+                            <span class="text-gray-400">Monitoreo GPS en tiempo real</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2: Traslados Corporativos -->
+                <div class="service-card fade-in" style="animation-delay: 0.2s;">
+                    <div class="service-icon">
+                        <i class="fas fa-building text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: white; font-family: var(--font-display);">Traslados Corporativos</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed" style="color: var(--color-gray-200);">
+                        Servicio ejecutivo para empresas multinacionales. Puntualidad, discreción y confort premium para ejecutivos, visitantes y equipos de trabajo. Ideal para reuniones, eventos y desplazamientos urbanos.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-lg mt-1" style="color: var(--color-copper);"></i>
+                            <span class="text-gray-400">Servicio ejecutivo premium</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-lg mt-1" style="color: var(--color-copper);"></i>
+                            <span class="text-gray-400">Conductores bilingües</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-lg mt-1" style="color: var(--color-copper);"></i>
+                            <span class="text-gray-400">Puntualidad garantizada</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3: Alquiler de Flota -->
+                <div class="service-card fade-in" style="animation-delay: 0.4s;">
+                    <div class="service-icon">
+                        <i class="fas fa-car text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: white; font-family: var(--font-display);">Alquiler de Flota</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed" style="color: var(--color-gray-200);">
+                        Alquiler de camionetas 4x4, minibuses y vans con conductor. Contratos flexibles adaptados a proyectos de corto, mediano y largo plazo. Mantenimiento y seguro incluidos.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-lg mt-1" style="color: var(--color-copper);"></i>
+                            <span class="text-gray-400">Flota moderna y renovada</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-lg mt-1" style="color: var(--color-copper);"></i>
+                            <span class="text-gray-400">Contratos personalizados</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-lg mt-1" style="color: var(--color-copper);"></i>
+                            <span class="text-gray-400">Mantenimiento incluido</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Choose Us Section -->
+    <section class="py-24 relative" style="background: linear-gradient(180deg, var(--color-slate-dark) 0%, var(--color-slate-deep) 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="section-title text-4xl md:text-5xl font-bold mb-6" style="font-family: var(--font-display); color: white;">
+                    ¿Por qué
+                    <span style="color: var(--color-copper);">Elegirnos?</span>
+                </h2>
+                <div class="w-20 h-1 mx-auto mb-6" style="background: linear-gradient(90deg, var(--color-copper), var(--color-terracota));"></div>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto" style="color: var(--color-gray-200);">
+                    La confianza de empresas líderes que operan en las condiciones más exigentes de Sudamérica.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center fade-in">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--color-copper) 0%, var(--color-terracota) 100%); box-shadow: 0 15px 50px rgba(217, 119, 6, 0.3);">
+                        <i class="fas fa-clock text-white text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: white; font-family: var(--font-display);">Puntualidad</h3>
+                    <p class="text-gray-300 leading-relaxed" style="color: var(--color-gray-200);">
+                        Sistemas de planificación logística y monitoreo GPS que garantizan el cumplimiento estricto de los horarios acordados.
+                    </p>
+                </div>
+                
+                <div class="text-center fade-in" style="animation-delay: 0.2s;">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--color-copper) 0%, var(--color-terracota) 100%); box-shadow: 0 15px 50px rgba(217, 119, 6, 0.3);">
+                        <i class="fas fa-shield-alt text-white text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: white; font-family: var(--font-display);">Seguridad</h3>
+                    <p class="text-gray-300 leading-relaxed" style="color: var(--color-gray-200);">
+                        Cumplimiento de normativas internacionales, conductores certificados y vehículos con mantenimiento preventivo permanente.
+                    </p>
+                </div>
+                
+                <div class="text-center fade-in" style="animation-delay: 0.4s;">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--color-copper) 0%, var(--color-terracota) 100%); box-shadow: 0 15px 50px rgba(217, 119, 6, 0.3);">
+                        <i class="fas fa-car text-white text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: white; font-family: var(--font-display);">Flota Moderna</h3>
+                    <p class="text-gray-300 leading-relaxed" style="color: var(--color-gray-200);">
+                        Vehículos de última generación equipados con tecnología de punta, confort superior y preparados para cualquier terreno.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 relative" style="background: var(--color-slate-dark);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="fade-in">
+                    <h2 class="section-title text-4xl md:text-5xl font-bold mb-6" style="font-family: var(--font-display); color: white;">
+                        Solicite una
+                        <span style="color: var(--color-copper);">Cotización</span>
+                    </h2>
+                    <div class="w-20 h-1 mb-8" style="background: linear-gradient(90deg, var(--color-copper), var(--color-terracota));"></div>
+                    <p class="text-lg text-gray-300 mb-8" style="color: var(--color-gray-200);">
+                        Complete el formulario y nuestro equipo se pondrá en contacto con usted a la brevedad para brindarle una cotización personalizada.
+                    </p>
+                    
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2" style="color: var(--color-gray-200);">Nombre Completo *</label>
+                            <input type="text" id="name" name="name" required class="form-input" placeholder="Juan Pérez">
+                        </div>
+                        
+                        <div>
+                            <label for="company" class="block text-sm font-medium mb-2" style="color: var(--color-gray-200);">Empresa *</label>
+                            <input type="text" id="company" name="company" required class="form-input" placeholder="Empresa S.A.">
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-2" style="color: var(--color-gray-200);">Email *</label>
+                                <input type="email" id="email" name="email" required class="form-input" placeholder="email@empresa.com">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium mb-2" style="color: var(--color-gray-200);">Teléfono *</label>
+                                <input type="tel" id="phone" name="phone" required class="form-input" placeholder="+54 388 155 000000">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium mb-2" style="color: var(--color-gray-200);">Servicio de Interés *</label>
+                            <select id="service" name="service" required class="form-input">
+                                <option value="">Seleccione un servicio</option>
+                                <option value="transporte-minero">Transporte Minero</option>
+                                <option value="traslados-corporativos">Traslados Corporativos</option>
+                                <option value="alquiler-flota">Alquiler de Flota</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2" style="color: var(--color-gray-200);">Mensaje *</label>
+                            <textarea id="message" name="message" required class="form-input" placeholder="Cuéntenos sobre sus necesidades de transporte..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Enviar Solicitud
+                        </button>
+                    </form>
+                    
+                    <div id="form-message" class="mt-4 p-4 rounded hidden"></div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="fade-in">
+                    <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-10 rounded-lg border border-copper/20" style="background: linear-gradient(135deg, var(--color-slate-dark) 0%, var(--color-slate-medium) 100%); border-color: rgba(217, 119, 6, 0.2);">
+                        <h3 class="text-3xl font-bold mb-8" style="color: white; font-family: var(--font-display);">Información de Contacto</h3>
+                        
+                        <div class="space-y-8">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, var(--color-copper) 0%, var(--color-terracota) 100%);">
+                                    <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2" style="color: white;">Dirección</h4>
+                                    <p class="text-gray-300" style="color: var(--color-gray-200);">
+                                        San Salvador de Jujuy<br>
+                                        Jujuy, Argentina
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, var(--color-copper) 0%, var(--color-terracota) 100%);">
+                                    <i class="fas fa-envelope text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2" style="color: white;">Email</h4>
+                                    <a href="mailto:punadeatacama@gmail.com" class="text-gray-300 hover:text-copper transition" style="color: var(--color-gray-200);">
+                                        punadeatacama@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, var(--color-copper) 0%, var(--color-terracota) 100%);">
+                                    <i class="fas fa-phone text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2" style="color: white;">Teléfono</h4>
+                                    <a href="tel:+543881557185283" class="text-gray-300 hover:text-copper transition" style="color: var(--color-gray-200);">
+                                        +54 388 155 718 528
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, var(--color-copper) 0%, var(--color-terracota) 100%);">
+                                    <i class="fas fa-clock text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2" style="color: white;">Horario</h4>
+                                    <p class="text-gray-300" style="color: var(--color-gray-200);">
+                                        Lunes a Viernes: 8:00 - 18:00<br>
+                                        Servicio 24/7 disponible
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10 pt-10 border-t" style="border-color: rgba(217, 119, 6, 0.2);">
+                            <h4 class="font-bold text-lg mb-4" style="color: white;">Zonas de Cobertura</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-2 rounded-full text-sm" style="background: rgba(217, 119, 6, 0.2); color: var(--color-copper);">Jujuy</span>
+                                <span class="px-4 py-2 rounded-full text-sm" style="background: rgba(217, 119, 6, 0.2); color: var(--color-copper);">Salta</span>
+                                <span class="px-4 py-2 rounded-full text-sm" style="background: rgba(217, 119, 6, 0.2); color: var(--color-copper);">Puna</span>
+                                <span class="px-4 py-2 rounded-full text-sm" style="background: rgba(217, 119, 6, 0.2); color: var(--color-copper);">NOA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-12 relative" style="background: var(--color-slate-deep); border-top: 1px solid rgba(217, 119, 6, 0.2);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="text-3xl font-bold mb-4">
+                        <span style="font-family: var(--font-display); color: var(--color-copper);">PUNA</span>
+                        <span style="font-family: var(--font-display); color: white;"> de Atacama</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Transporte de excelencia para la industria minera y corporativa. Más de 15 años conectando empresas con sus destinos de forma segura y puntual.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition hover:scale-110" style="background: linear-gradient(135deg, var(--color-copper) 0%, var(--color-terracota) 100%);">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition hover:scale-110" style="background: linear-gradient(135deg, var(--color-copper) 0%, var(--color-terracota) 100%);">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition hover:scale-110" style="background: linear-gradient(135deg, var(--color-copper) 0%, var(--color-terracota) 100%);">
+                            <i class="fab fa-linkedin-in text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4" style="color: white; font-family: var(--font-display);">Enlaces Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-copper transition" style="color: var(--color-gray-200);">Inicio</a></li>
+                        <li><a href="#nosotros" class="text-gray-400 hover:text-copper transition" style="color: var(--color-gray-200);">Nosotros</a></li>
+                        <li><a href="#servicios" class="text-gray-400 hover:text-copper transition" style="color: var(--color-gray-200);">Servicios</a></li>
+                        <li><a href="#contacto" class="text-gray-400 hover:text-copper transition" style="color: var(--color-gray-200);">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4" style="color: white; font-family: var(--font-display);">Servicios</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-gray-400">Transporte Minero</span></li>
+                        <li><span class="text-gray-400">Traslados Corporativos</span></li>
+                        <li><span class="text-gray-400">Alquiler de Flota</span></li>
+                        <li><span class="text-gray-400">Logística 24/7</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="pt-8 border-t text-center" style="border-color: rgba(217, 119, 6, 0.2);">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2025 Puna de Atacama S.R.L. Todos los derechos reservados. | Diseñado para la excelencia en transporte corporativo y minero.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // ========================================
+        // NAVIGATION & UI INTERACTIONS
+        // ========================================
+        
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+        
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Smooth scroll helper
+        function scrollToContact() {
+            document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // ========================================
+        // SCROLL ANIMATIONS
+        // ========================================
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // ========================================
+        // CONTACT FORM HANDLING
+        // ========================================
+        
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                company: document.getElementById('company').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Show loading state
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
+            submitButton.disabled = true;
+            
+            try {
+                // ========================================
+                // SUPABASE INTEGRATION POINT
+                // ========================================
+                
+                /*
+                 * TO-DO: Integrate with Supabase
+                 * 
+                 * 1. Install Supabase client:
+                 *    npm install @supabase/supabase-js
+                 * 
+                 * 2. Initialize Supabase client (in production, use environment variables):
+                 *    const supabaseUrl = process.env.SUPABASE_URL;
+                 *    const supabaseKey = process.env.SUPABASE_ANON_KEY;
+                 *    const supabase = createClient(supabaseUrl, supabaseKey);
+                 * 
+                 * 3. Create a 'contact_leads' table in Supabase with columns:
+                 *    - id (uuid, primary key)
+                 *    - name (text)
+                 *    - company (text)
+                 *    - email (text)
+                 *    - phone (text)
+                 *    - service (text)
+                 *    - message (text)
+                 *    - timestamp (timestamptz)
+                 *    - created_at (timestamptz, default now())
+                 * 
+                 * 4. Insert the data:
+                 *    const { data, error } = await supabase
+                 *      .from('contact_leads')
+                 *      .insert([formData]);
+                 * 
+                 *    if (error) throw error;
+                 * 
+                 * 5. For production deployment on Cloudflare Pages:
+                 *    - Set environment variables in Cloudflare dashboard
+                 *    - Use Cloudflare Workers/Functions for backend logic
+                 *    - Implement reCAPTCHA for spam protection
+                 */
+                
+                // Simulated API call (remove this in production)
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                // Success message
+                formMessage.className = 'mt-4 p-4 rounded bg-green-900/50 border border-green-500 text-green-200';
+                formMessage.textContent = '¡Gracias! Hemos recibido su solicitud. Nos pondremos en contacto a la brevedad.';
+                formMessage.classList.remove('hidden');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Log to console for development (remove in production)
+                console.log('Form submitted:', formData);
+                
+            } catch (error) {
+                // Error message
+                formMessage.className = 'mt-4 p-4 rounded bg-red-900/50 border border-red-500 text-red-200';
+                formMessage.textContent = 'Hubo un error al enviar el formulario. Por favor, intente nuevamente o contáctenos directamente.';
+                formMessage.classList.remove('hidden');
+                
+                console.error('Form submission error:', error);
+            } finally {
+                // Restore button
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.classList.add('hidden');
+                }, 5000);
+            }
+        });
+        
+        // ========================================
+        // PERFORMANCE & UX ENHANCEMENTS
+        // ========================================
+        
+        // Lazy load images (if you add images later)
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('img.lazy').forEach(img => imageObserver.observe(img));
+        }
+        
+        // Prevent form resubmission on page refresh
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+</body>
+</html>
